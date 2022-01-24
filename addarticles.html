@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="AddArticle.css"> -->
+    <script src="https://kit.fontawesome.com/8fb78c4ea1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="adminpage.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                   <a href="./adminpage.html">
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <span class="title"><h2>Admin/User</h2></span>
+                   </a>
+                </li>
+                <li>
+                   <a href="./addarticles.html">
+                    <span class="icon"><i class="far fa-newspaper"></i></span>
+                    <span class="title">Add Articles</span>
+                   </a>
+                </li>
+                <li>
+                    <a href="./sitemessages.html">
+                     <span class="icon"><i class="fas fa-comment"></i></span>
+                     <span class="title">Site Messages</span>
+                    </a>
+                </li>
+                <li>
+                   <a href="./loginpage.html">
+                    <span class="icon"><i class="fas fa-sign-out-alt"></i> </span>
+                    <span class="title">Logout</span>
+                   </a>
+                </li>
+            </ul>
+
+        </div>
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle" onclick="toggleMenu();"></div>
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="search here">
+                    <i class="fas fa-search"></i>
+                </label>
+                </div>
+                <div class="user">
+                    <img class="user" src="/yannick pic.jpg">
+    
+                
+            </div>
+            
+
+        </div>
+        <!-- Change This Div  -->
+        <div class="container">
+            <div class="main-body">
+                <div class="blog">
+                    <div class="new-article">
+                        <h1>Blog|Article</h1>
+                        <form class="form-article">
+                            <label class="name" for="names">Title</label>
+                            <input class="text" type="text" id="title" name="title">
+                            <p class="error" id="error-title"></p>
+                            <label class="name" for="message">Text</label>
+                            <textarea class="textarea" id="text" name="text"></textarea>
+                            <p class="error" id="error-text"></p>
+                            <button class="submit" type="submit" name="btn-article">SAVE ARTICLE</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="btn-title">
+                    <h1 style="color: white;font-size:15px">SAVED ARTICLES</h1><hr>
+                    
+                </div >
+               
+               
+                <div class="blog">
+                    <div class="saved-articles">
+                        <ol class="list-articles"></ol>
+                        
+                           
+                        </ol>
+                        <div class="button">
+                         <div class="button-1">
+                            <button>update</button>
+                            <button>edit</button>
+                            <button>delete</button>
+                         </div>
+                         <div class="button-2">
+                            <button>update</button>
+                            <button>edit</button>
+                            <button>delete</button>
+                         </div>
+                         <div class="button-2">
+                            <button>update</button>
+                            <button>edit</button>
+                            <button>delete</button>
+                         </div>
+                         <div class="button-2">
+                            <button>update</button>
+                            <button>edit</button>
+                            <button>delete</button>
+                         </div>
+                         <div class="button-2">
+                            <button>update</button>
+                            <button>edit</button>
+                            <button>delete</button>
+                         </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+               
+            </div>
+            
+            <div class="main-footer">
+            </div>
+    </div>
+        <!-- Change This Div  -->
+    </div>
+    </div>
+    <script>
+        function toggleMenu(){
+         let toggle = document.querySelector('.toggle');
+         let navigation = document.querySelector('.navigation');
+         let main = document.querySelector('.main');
+         main.classList.toggle('active')
+         toggle.classList.toggle('active');
+         navigation.classList.toggle('active');
+}
+    </script>
+    <div class="nav-container">
+        <!-- <div class="header" id="header">
+            <div class="top-menu">
+                <ul class="menu">
+                    <li><a href="admin.html" id="admin">admin</a></li>
+                    <li><a href="addarticles.html" id="addarticle">Add Articles</a> </li>
+                    <li><a href="sitemessages.html" id="messages">Site Messages</a> </li>
+                    <li><a href="profile.html" id="profile">Profile</a> </li>
+                    <li><a href="LOGOUT.html" class="logout">Logout</a></li>
+                </ul>
+            </div>
+        </div> -->
+        
+    <script src="addArticle.js"></script>
+</body>
+</html>

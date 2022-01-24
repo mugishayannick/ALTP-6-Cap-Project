@@ -1,0 +1,172 @@
+@import url('./fonts.css');
+@import url('./header.css');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #FF6666;
+    width: 100%;
+    height: 100%;
+}
+.Landing-Page{
+   display: flex;
+   flex-direction: column;
+   
+   /* padding: 50px; */
+}
+.head-right{
+    display: flex;
+    
+}
+.burger{
+    color: white;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    display: none;
+}
+
+.left-side h4{
+    color: white;
+    margin-bottom: 10px;
+    font-size: 35px;
+    font-weight: 100;
+    
+}
+.menu{
+    letter-spacing: 3px;
+    font-size: 14px;
+    
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    
+    color: white;
+    
+}
+.left-side{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    
+}
+.left-side h2{
+    margin-bottom: 10px;
+    font-size: 50px;
+    font-weight: 400;
+}
+.right-side{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+.img-profile{
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 40px;    
+}
+.icons{
+    list-style-type: none;
+    line-height: 20px;
+   
+    
+}
+.icons li{
+    display: inline;
+    font-size: 35px;
+}
+ul.messages{
+    list-style:none;
+}
+ul.messages li{
+    border-bottom: 1px solid #fff;
+}
+
+.fab, .fas{
+    padding: .5em;
+    
+    border-radius: 100%;
+    margin-bottom: .10vh;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.fas:hover{
+    color: black;
+
+}
+.fab:hover{
+    color: black;
+}
+
+@media only screen and (max-width:700px){
+    body{
+        width: 100%;
+    }
+}
+@media only screen and (max-width:800px){
+    body{
+        overflow-x: hidden;
+    }
+    .menu{
+        position: fixed;
+        right: -1000px;
+        height: 70vh;
+        top: 100px;
+        background-color: #FF6666;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 50%;
+        transition: 0.2s ease-in;
+        
+        
+    }
+    .menu.active{
+        right: 0px;
+
+    }
+    .menu li{
+        opacity: 10;
+    }
+    .burger{
+        display: block;
+        margin-bottom: 40px;
+        font-size: 20px;
+    }
+    
+    
+    
+}
+.nav-active{
+    transform: translateX(0%);
+}
+@media only screen and (max-width:700px){
+    .left-side h4{
+        font-size: 25px;
+        font-weight: 400;
+    }
+    .left-side h2{
+        font-size: 23px;
+        font-weight: 100;
+    }
+    .icons li{
+        font-size: 17px;
+    }
+
+}
