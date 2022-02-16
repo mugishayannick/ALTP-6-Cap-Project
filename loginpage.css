@@ -12,7 +12,7 @@ body{
 }
 
 .content-one{
-    background-color: #FFD324;
+    background-color: #FF6666;
     width: 100%;
     height: auto;
     
@@ -30,7 +30,7 @@ body{
 }
 .menu li{
     display: inline;
-    margin-left: 20px;
+    margin-left: 50px;
     
 }
 .menu li a{
@@ -87,13 +87,13 @@ body{
 .up-main-content h4{
     font-size: 30px;
     font-weight: 500;
-    color: #FFD324;
+    color: #FF6666;
     margin-bottom: 20px;
     letter-spacing: 5px;
     
 }
 .button{
-    background-color: #FFD324; 
+    background-color: #FF6666; 
     border: none;
     color: white;
     padding: 10px 30px;

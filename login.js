@@ -9,8 +9,8 @@ loginForm.addEventListener('submit',(e)=>{
     }else if(password.length==0){
         document.querySelector('.error-password').innerHTML="please enter a password";
     }else{
-        // loginForm.submit();
-        // window.location.href="adminpage.html";
+        loginForm.submit();
+        window.location.href="adminpage.html";
         login(email, password);
         
     }    
@@ -19,6 +19,7 @@ loginForm.addEventListener('submit',(e)=>{
 const postEl=document.querySelectorAll('#email,#passowrd');
 postEl.forEach((el,index)=>{
     el.addEventListener('change',(e)=>{
+        e.preventDefault();
         var val=e.target.value;
         if(val.length>0 && e.target.id=='email'){ 
             document.querySelector('.error-email').style.display="none";

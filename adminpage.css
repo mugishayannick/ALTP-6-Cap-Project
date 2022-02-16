@@ -7,6 +7,7 @@
 }
 body{
     overflow-x: hidden;
+    background-color: white;
 }
 .container{
     position: relative;
@@ -75,7 +76,7 @@ body{
     width: calc(100% - 300px);
     left: 300px;
     min-height: 100vh;
-    background: #f5f5f5;
+    background: #003147;
     transition: 0.5s;
 }
 .main.active{
@@ -151,10 +152,12 @@ body{
 
 .form-article input, select {
     height: 30px;
+    color: #111;
    
 }
 .form-article textarea[id=text] {
     min-height: 200px;
+    color: black
 }
 .new-article form {
     display: flex;
@@ -175,7 +178,7 @@ body{
 }
 .main-body{
     padding: 10px 50px;
-    background: rgb(3 105 161);
+    background: #003147;
 }
 .name{
     margin-bottom: 5px;
@@ -193,15 +196,13 @@ body{
     
 }
 .submit{
-    color: rgb(3 105 161);
+    
     font-weight: bolder;
     padding: 5px 5px;
     cursor: pointer;
     
 }
-/* .button:hover{
-    color: #003147;
-} */
+
 .textarea{
     margin-bottom: 5px;
 }

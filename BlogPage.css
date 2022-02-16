@@ -17,7 +17,7 @@ body{
 .navigation-bar{
    display: flex;
    flex-direction: column;
-   background-color: #FFD324;
+   background-color: #FF6666;
 }
 
 
@@ -30,7 +30,7 @@ body{
     margin: auto;
     padding: 30px 30px;
     margin-bottom: 100px;
-    background-color: #FFD324;
+    background-color: #FF6666;
    
 }
 
@@ -45,6 +45,9 @@ body{
 }
 .right-up-nav{
     display: flex;
+}
+.menu li a{
+    margin-left: 20px;
 }
 .burger{
     color: white;

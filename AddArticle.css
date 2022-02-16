@@ -3,9 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: #FF6666;
-}
+
 
 .nav-container{
     display: flex;
@@ -35,7 +33,7 @@ body{
 }
 .list-articles li{
     margin-bottom: 5px;
-    color: black;
+    color: white;
 }
 .show{
     display: none;
@@ -55,9 +53,11 @@ body{
 .form-article input, select {
     height: 30px;
     
+    
 }
 .form-article textarea[id=text] {
     min-height: 200px;
+    color: black;
     
 }
 .new-article form {
@@ -68,10 +68,12 @@ body{
     margin-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 50px;
+    
 }
 .btn-article{
     margin-top: 5px;
     padding-top: 5px;
+    color: black;
     
     
 
