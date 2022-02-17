@@ -4,6 +4,24 @@ window.addEventListener('load',(e)=>{
         loadMessages();
     }
 });
+fetch('http://personal-portofolio1.herokuapp.com/api/message').then((data) => {
+    // console.log(data);
+    return data.json();
+}).then((completedata) => {
+    // console.log(completedata[2].title);
+    let data1="";
+    completedata.map((values) => {
+        data1+= ` <div class="card">
+        <h1 class="name">${values.name}</h1>
+        <h2 class="email">${values.email}</h2>
+        <h2 class="message">${values.message}</h2>
+    </div> `
+    })
+    document.getElementById("cards").innerHTML=data1;
+}).catch((err) => {
+    console.log(err);
+})
+
 function loadMessages(){
     if(localStorage.getItem('messages')){
         var mymessages=JSON.parse(localStorage.getItem('messages'));

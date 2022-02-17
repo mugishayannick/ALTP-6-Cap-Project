@@ -1,7 +1,8 @@
 import{login}from './loginp.js'
+
 const loginForm=document.querySelector('.loginForm');
 loginForm.addEventListener('submit',(e)=>{
-    e.preventDefault();
+    // e.preventDefault();
     const email=document.querySelector('#email').value;
     const password=document.querySelector('#password').value;
     if(email.length==0){
@@ -9,9 +10,16 @@ loginForm.addEventListener('submit',(e)=>{
     }else if(password.length==0){
         document.querySelector('.error-password').innerHTML="please enter a password";
     }else{
-        loginForm.submit();
-        window.location.href="adminpage.html";
-        login(email, password);
+        // loginForm.submit();
+        // window.location.href="adminpage.html";
+        
+        // console.log(login(email, password));
+        const response = login(email, password)
+        console.log(response)
+        if (response.status!= 201) {
+            e.preventDefault();
+            
+        }
         
     }    
 
@@ -19,7 +27,7 @@ loginForm.addEventListener('submit',(e)=>{
 const postEl=document.querySelectorAll('#email,#passowrd');
 postEl.forEach((el,index)=>{
     el.addEventListener('change',(e)=>{
-        e.preventDefault();
+      
         var val=e.target.value;
         if(val.length>0 && e.target.id=='email'){ 
             document.querySelector('.error-email').style.display="none";

@@ -1,3 +1,22 @@
+fetch('http://personal-portofolio1.herokuapp.com/api/post').then((data) => {
+    // console.log(data);
+    return data.json();
+}).then((completedata) => {
+    // console.log(completedata[2].title);
+    let data1="";
+    completedata.map((values) => {
+        data1+= ` <div class="card">
+        <h2 class="title">${values.title}</h2>
+        <h2 class="content">${values.content}</h2>
+        <img class="images" src=${values.imageUrl} alt="img">
+        <h2 class="userId">${values.userId}</h2>
+    </div> `
+    })
+    document.getElementById("cards").innerHTML=data1;
+}).catch((err) => {
+    console.log(err);
+})
+
 const formarticle=document.querySelector('.form-article');
 window.addEventListener('load',(e)=>{
     //get all articles 
@@ -18,9 +37,9 @@ formarticle==null ? null:formarticle.addEventListener('submit',(e) =>{
         //add data to localstorage
         var textobject=[
             {
-                articletitle:title,
-                text:textbody,
-                likes:[],
+                title:title,
+                content:textbody,
+                imageUrl:[],
                 comments:[],
             }
         ];
@@ -48,7 +67,7 @@ function getArticles(){
                 var listEl=document.createElement('li');
                 var listtext=document.createTextNode(`${articles[index][i].articletitle}`);
                 listEl.appendChild(listtext);
-                parentEl.append(listEl);
+                parentEl.appendChild(listEl);
             }                     
         });
     }  

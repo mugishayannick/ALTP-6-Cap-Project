@@ -1,3 +1,7 @@
+const loginFormData = () => {
+    document.getElementById('').value
+}
+
 
 const login = async (useremail, password) =>{
     const credentials = {
@@ -6,22 +10,26 @@ const login = async (useremail, password) =>{
         loggedIn: false,
         
      }
-    const response = await fetch("http://127.0.0.1:8000/api/auth/login", {
+    const response = await fetch("https://personal-portofolio1.herokuapp.com/api/auth/login", {
     method: "POST",
     body: JSON.stringify(credentials),
     headers: { "Content-Type": "application/json" },
   });
 
-  
-  if (response.status == 200) {
+  console.log(response);
+  if (response.status == 201) {
     console.log("logged in succesfully");
-    const res = await response.json();
-    token = res.accesstoken;
-    check = true;
+    const token = await response.json();
+    console.log(token);
+    localStorage.token= token;
+    window.location.href='./adminpage.html'
+    
+    
   }
   else{
-  console.log("I got there")
-  check = false;
+  console.log("the credentials does not meet")
+ 
+  
 }
     // let users = JSON.parse(localStorage.getItem('users'));
     // if(username=="yannickmugisha23@gmail.com" && password=="Yannick23"){
@@ -48,6 +56,6 @@ function logout(){
 
     }
     else {
-        window.location="loginpage.html"
+        window.location.href=''
     }
 }

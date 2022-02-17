@@ -76,7 +76,7 @@ body{
     width: calc(100% - 300px);
     left: 300px;
     min-height: 100vh;
-    background: #003147;
+    background: #fff;
     transition: 0.5s;
 }
 .main.active{
@@ -178,18 +178,18 @@ body{
 }
 .main-body{
     padding: 10px 50px;
-    background: #003147;
+    background: white;
 }
 .name{
     margin-bottom: 5px;
-    color: #fff;
+    color: black;
 }
 .text{
     margin-bottom: 5px;
-    color: #fff;
+    color: black;
 }
 .list-articles li{
-    color: #fff;
+    color: black;
     margin-bottom: 5px;
     margin-top: 4px;
     
@@ -207,7 +207,7 @@ body{
     margin-bottom: 5px;
 }
 .new-article h1{
-    color: #fff;
+    color: black;
 }
 .button{
     margin-left: 770px;
@@ -240,3 +240,26 @@ body{
     margin-left: 4px;
     
 }
+
+
+#cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card{
+    width: 23%;
+    box-shadow: 0 0 4px 3px pink;
+    text-align: center;
+    padding: 1.5em;
+    margin-bottom: 2em;
+
+}
+.title{
+    font-size: 1.3ren;
+}
+.images {
+    width: 80%;
+}
+
