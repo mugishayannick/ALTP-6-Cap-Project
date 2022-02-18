@@ -13,6 +13,17 @@ fetch('http://personal-portofolio1.herokuapp.com/api/post').then((data) => {
     </div> `
     })
     document.getElementById("cards").innerHTML=data1;
+    const card =document.querySelector('.card');
+    card.addEventListener('click', (e, title,content,imageUrl,id) => {
+        window.location.href="editpage.html";
+    })
+    //add eventlistener of card click (e, title,content,imageUrl,id) => {
+        //navigate to edit page 
+        //in edit page 
+        //ck editor get data from parameter
+        //form add eventlistener submit
+        // submitting it will fetch on the end point y k editinga
+    //}
 }).catch((err) => {
     console.log(err);
 })

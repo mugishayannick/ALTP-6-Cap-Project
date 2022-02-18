@@ -18,6 +18,11 @@ fetch('http://personal-portofolio1.herokuapp.com/api/message').then((data) => {
     </div> `
     })
     document.getElementById("cards").innerHTML=data1;
+    document.getElementById("cards").innerHTML=data1;
+    const card =document.querySelector('.card');
+    card.addEventListener('click', (e, name,email,message,id) => {
+        window.location.href="editpage.html";
+    })
 }).catch((err) => {
     console.log(err);
 })
@@ -39,14 +44,14 @@ function loadMessages(){
                 parentNode.append(listEl);
                
             }   
-            // parentNode.innerHTML=element.message 
-            //     var listEl=document.createElement('ol');
-            //     var textNode=document.createTextNode(`Message:${element.message}`);
-            //     listEl.appendChild(textNode);
-            //     parentNode.append(listEl);
+            parentNode.innerHTML=element.message 
+                var listEl=document.createElement('ol');
+                var textNode=document.createTextNode(`Message:${element.message}`);
+                listEl.appendChild(textNode);
+                parentNode.append(listEl);
                     
         });
-        // console.log(parentNode);
+        console.log(parentNode);
 
     }
 }

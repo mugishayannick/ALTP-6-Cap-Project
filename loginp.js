@@ -28,6 +28,7 @@ const login = async (useremail, password) =>{
   }
   else{
   console.log("the credentials does not meet")
+  alert("wrong credentials")
  
   
 }
@@ -56,6 +57,6 @@ function logout(){
 
     }
     else {
-        window.location.href=''
+        window.location.href='./loginpage.html'
     }
 }

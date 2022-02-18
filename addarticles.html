@@ -53,7 +53,7 @@
                 <div class="user">
                     <img class="user" src="/yannick pic.jpg">
     
-                
+            
             </div>
             
 
@@ -65,10 +65,12 @@
                     <div class="new-article">
                         <h1>Blog|Article</h1>
                         <form class="form-article">
-                            <label class="name" for="names">Title</label>
+                            <label class="title" for="title">Title</label>
                             <input class="text" type="text" id="title" name="title">
                             <p class="error" id="error-title"></p>
-                            <label class="name" for="content">content</label>
+                            <h3 class="imageUrl">imageUrl</h3>
+                            <input type="file" name="imageUrl" class="imageUrl" />
+                            <label class="content" for="content">content</label>
                             <textarea class="textarea" id="text" name="text"></textarea>
                             <p class="error" id="error-text"></p>
                             <button class="submit" type="submit" name="btn-article">SAVE ARTICLE</button>
@@ -77,11 +79,11 @@
                 </div>
                 <div class="btn-title">
                     <h1 style="color: black;font-size:15px">SAVED ARTICLES</h1><hr>
-                    
+                    <div id="cards"></div>
                 </div >
                
                
-                <div class="blog">
+                <!-- <div class="blog">
                     <div class="saved-articles">
                         <ol class="list-articles"></ol>
                         
@@ -106,13 +108,14 @@
                         
                     </div>
                     
-                </div>
+                </div> -->
                 
                
             </div>
             
             <div class="main-footer">
             </div>
+            <div id="cards"></div>
     </div>
         <!-- Change This Div  -->
     </div>

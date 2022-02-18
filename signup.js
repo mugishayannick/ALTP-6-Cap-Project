@@ -16,9 +16,9 @@ confirmPassword.addEventListener("blur", validateConfirmPassword);
 function validateFirstName() {
     const firstNameValue = firstName.value.trim();
     if(firstNameValue === '') {
-       setError(firstName, 'firstname is required');
+       setError(firstName, 'Username is required');
      } else if(firstNameValue.length < 5 || firstNameValue.length > 25){
-       setError(firstName, 'Your name must be between 5 and 20 letters');
+       setError(firstName, 'Your name must be between 5 and 25 letters');
      }else {
        setSuccess(firstName);
    }
@@ -26,9 +26,9 @@ function validateFirstName() {
 function validateLastName() {
     const lastNameValue = lastName.value.trim();
     if(lastNameValue === '') {
-       setError(lastName, 'lastname is required');
+       setError(lastName, 'Username is required');
      } else if(lastNameValue.length < 5 || lastNameValue.length > 25){
-       setError(lastName, 'Your name must be between 5 and 20 letters');
+       setError(lastName, 'Your name must be between 5 and 25 letters');
      }else {
        setSuccess(lastName);
    }
@@ -73,50 +73,22 @@ document.querySelector("#sign-btn").addEventListener("click",
 (e) => {
    
      e.preventDefault();
+
      validateForm();
-     const signup = async (firstName, lastName, email, password, confirmPassword) =>{
-        const credentials = {
-            firstName: firstName,
-            lastName: lastName,
-            email : email,
-            password : password,
-            confirmPassword: confirmPassword,
-            loggedIn: false,
-            
-         }
-     const response = fetch("https://personal-portofolio1.herokuapp.com/api/auth/login", {
-        method: "POST",
-        body: JSON.stringify(credentials),
-        headers: { "Content-Type": "application/json" },
-      });
-    
-      console.log(response);
-      if (response.status == 201) {
-        console.log("logged in succesfully");
-        const token = response.json();
-        console.log(token);
-        localStorage.token= token;
-        
-        
-      }
-      else{
-      console.log("the credentials does not meet")
      
-      
-    }
-
      
     
-    
- 
-};
-
-function validateForm() {
+});
+ function validateForm() {
 
     const inputs = document.querySelectorAll("form input");
 
       console.log(inputs);
+      alert("signed up successfully")
+    window.location.href='./loginpage.html'
 
+
+ }
     // if(firstName.classList.contains('success') && 
     // lastName.classList.contains('success') && 
     //    email.classList.contains('success') &&
@@ -125,11 +97,11 @@ function validateForm() {
     //    ){
     //      document.querySelector("form").submit();
     //     } else{
-    //          alert("validate all fields");
+    //         //  alert("validate all fields");
     //        return;
     //      }
 
-}
+
 
 const setError = (element, message) => {
     const inputControl = element.parentElement;
@@ -152,7 +124,3 @@ const isValidEmail = email => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i;
     return re.test(String(email).toLowerCase());
 }
-
-
-
-
