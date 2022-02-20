@@ -19,6 +19,8 @@ const renderPosts = (posts) => {
       <a href="#" class="card-link" id="delete-post" >Delete</a>
       <textarea class="form-comment" placeholder="Leave a comment here" rows="5"></textarea>
       <button class"from-button" id="comment-post">comment</button>
+      <h7 class="card-comment">${post.comment}</h7>
+     
      
 
     </div>
@@ -33,6 +35,8 @@ postsList.innerHTML=output;
   
 
 const url =  'http://personal-portofolio1.herokuapp.com/api/post';
+const http =  'http://personal-portofolio1.herokuapp.com/api/comment';
+
 
 // Get -  read the posts
 //method Get
@@ -49,7 +53,7 @@ postsList.addEventListener('click', (e) => {
 
   let id = e.target.parentElement.dataset.id;
    if(commentButtonIsPressed) {
-     fetch(`${url/{id}}`, {
+     fetch(`${http}/${id}`, {
        method:'GET',
        headers: {
         'content-type': 'application/json',
