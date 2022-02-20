@@ -4,7 +4,6 @@ contactForm.addEventListener('submit',(e)=>{
     e.preventDefault();
     const name=document.querySelector('#name').value;
     const email=document.querySelector('#email').value;
-    const phone=document.querySelector('#phone').value;
     const message=document.querySelector('#w3review').value;
     if(name.length==0){
         document.querySelector('.error-name').innerHTML="Please enter a name";
@@ -12,9 +11,6 @@ contactForm.addEventListener('submit',(e)=>{
     }else if(email.length==0){
         document.querySelector('.error-email').innerHTML="Please enter your email";
         document.querySelector('.error-email').style.color="red";
-    }else if(phone.length==0){
-        document.querySelector('.error-phone').innerHTML="Enter telephone number";
-        document.querySelector('.error-phone').style.color="red";
     }else if(message.length==0){
         document.querySelector('.error-text').innerHTML="Please enter your query";
         document.querySelector('.error-text').style.color="red";
@@ -25,7 +21,6 @@ contactForm.addEventListener('submit',(e)=>{
             {
                 visitorname:name,
                 visitoremail:email,
-                visitorphone:phone,
                 message:message,
             }
         
@@ -49,8 +44,6 @@ contactFormEl.forEach((el,index)=>{
             document.querySelector('.error-name').style.display="none";
         }else if(val.length>0 && e.target.id=='email'){
             document.querySelector('.error-email').style.display="none";
-        }else if(val.length>0 && e.target.id=='phone'){ 
-            document.querySelector('.error-phone').style.display="none";
         }else if(val.length>0 && e.target.id=='w3review'){ 
             document.querySelector('.error-text').style.display="none";
         }      

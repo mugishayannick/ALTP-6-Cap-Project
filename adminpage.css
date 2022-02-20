@@ -249,11 +249,12 @@ body{
     flex-wrap: wrap;
 }
 .card{
-    width: 23%;
-    box-shadow: 0 0 4px 3px pink;
+    width: 40%;
+   
     text-align: center;
     padding: 1.5em;
-    margin-bottom: 2em;
+    
+    margin-left: 80px;
 
 }
 .title{
@@ -262,4 +263,82 @@ body{
 .images {
     width: 80%;
 }
+.buttons{
+    border-radius: 50px;
+    letter-spacing: 3px;
+    text-decoration: none;
 
+}
+.article{
+    margin-bottom: 40px;
+    padding: 10px 20px;
+}
+#posts-list-row{
+    display: flex;
+    width: 80%;
+    margin-left: 20px;
+    
+}
+.card-title{
+    margin-bottom: 20px;
+}
+.card-text {
+    margin-bottom: 10px;
+}
+.h7{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+.card-imageUrl{
+    margin-bottom: 50px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.form-control{
+    width: 510px;
+    height: 25px;
+}
+.h3{
+   margin-left: 50px;
+}
+.btn{
+border-radius: 40px;
+width: 30%;
+padding: 10px 10px;
+margin-left: 160px;
+background: #fff;
+border: 1px solid black;
+cursor: pointer;
+
+
+}
+.btn:hover{
+    background: #003147;
+    transition: 0.4s;
+    
+}
+.form-content{
+    width: 510px;
+    height: 150px;
+}
+.card-link{
+    text-decoration: none;
+    font-size: 20px;
+}
+.card {
+    margin-top: 50px;
+}
+.form-comment{
+    margin-top: 50px;
+}
