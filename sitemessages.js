@@ -1,4 +1,4 @@
-const url = 'http://personal-portofolio1.herokuapp.com/api/message'
+
 window.addEventListener('load',(e)=>{
     var urlAddress=window.location.href;
     if(urlAddress.includes('sitemessages.html')){
@@ -6,7 +6,7 @@ window.addEventListener('load',(e)=>{
     }
 });
 
-fetch(url).then((data) => {
+fetch('http://personal-portofolio1.herokuapp.com/api/message').then((data) => {
     // console.log(data);
     return data.json();
 }).then((completedata) => {
@@ -25,10 +25,9 @@ fetch(url).then((data) => {
     card.addEventListener('click', (e, name,email,message,id) => {
        
     })
+}).catch((err) => {
+    console.log(err);
 })
-// }).catch((err) => {
-//     console.log(err);
-// })
 
 function loadMessages(){
     if(localStorage.getItem('messages')){

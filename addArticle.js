@@ -1,3 +1,13 @@
+var imageUrl
+document.getElementById("imageUrl-value").addEventListener('change', function() {
+  const image = new FileReader()
+  image.readAsDataURL(this.files[0])
+  image.addEventListener('load' , ()=>{
+    imageUrl = image.result
+    console.log(imageUrl);
+  })
+})
+
 const postsList = document.getElementById('posts-list-row');
 let output = '';  
 const form = document.querySelector('form');
@@ -13,7 +23,7 @@ const renderPosts = (posts) => {
     <div class="card-body" data-id=${post._id}>
       <h5 class="card-title">${post.title}</h5>
       <img class="card-imageURL" src=${post.imageUrl}>
-      <p class="card-text">${post.content}</p>
+      <p class="card-text">${post.content}?</p>
       <h7 class="card-userId">${post.userId}</h7>
       <a href="#" class="card-link" id="edit-post">Edit</a>
       <a href="#" class="card-link" id="delete-post" >Delete</a>
@@ -35,7 +45,7 @@ postsList.innerHTML=output;
   
 
 const url =  'http://personal-portofolio1.herokuapp.com/api/post';
-const https =  'http://personal-portofolio1.herokuapp.com/api/comment';
+
 
 
 // Get -  read the posts
@@ -49,20 +59,20 @@ postsList.addEventListener('click', (e) => {
   e.preventDefault();
   let delButtonIsPressed = e.target.id == 'delete-post';
   let editButtonIsPressed = e.target.id == 'edit-post';
-  let commentButtonIsPressed = e.target.id == 'comment-post'
+  // let commentButtonIsPressed = e.target.id == 'comment-post'
 
   let id = e.target.parentElement.dataset.id;
-   if(commentButtonIsPressed) {
-     fetch(`${https}/${id}`, {
-       method:'GET',
-       headers: {
-        'content-type': 'application/json',
-        'authorization': `Bearer ${token}`
-       }
-     })
-     .then(res => res.json())
-     .then(() => location.reload())
-   }
+  //  if(commentButtonIsPressed) {
+  //    fetch(`${https}/${id}`, {
+  //      method:'GET',
+  //      headers: {
+  //       'content-type': 'application/json',
+  //       'authorization': `Bearer ${token}`
+  //      }
+  //    })
+  //    .then(res => res.json())
+  //    .then(() => location.reload())
+  //  }
   //delete - remove existing post
   //method:DELETE
   if(delButtonIsPressed) {
@@ -78,11 +88,11 @@ postsList.addEventListener('click', (e) => {
   }
 
   if(editButtonIsPressed) {
-   
+    
     const parent = e.target.parentElement;
     let titleContent = parent.querySelector('.card-title').textContent;
     let contentContent = parent.querySelector('.card-text').textContent;
-    let imageUrlContent = parent.querySelector('.card-imageURL').fileContent;
+    let imageUrlContent = parent.querySelector('.card-imageUrl').Content;
     let userIdContent = parent.querySelector('.card-userId').textContent;
    
 
@@ -90,11 +100,13 @@ postsList.addEventListener('click', (e) => {
     contentValue.value = contentContent;
     imageUrlValue.value = imageUrlContent;
     userIdValue.value = userIdContent;
+    
   }
 
   // update - update the existing post
   // METHOD: PATCH
   btnSubmit.addEventListener('click', (e) => {
+    
     e.preventDefault();
     const token = localStorage.getItem("token");
     
@@ -109,6 +121,7 @@ postsList.addEventListener('click', (e) => {
         content: contentValue.value,
         imageUrl: imageUrlValue.value,
         userId: userIdValue.value
+      
       })
      
     }) .then(res => res.json())
@@ -121,12 +134,12 @@ postsList.addEventListener('click', (e) => {
   
 // create = Insert new post
 // Method: POST
-
+let image = document.getElementById("imageUrl-value").files[0]
 form.addEventListener('submit', (e) => {
   const token = localStorage.getItem("token");
   e.preventDefault();
 
-  console.log(titleValue.value); 
+  
  fetch(url, {
    method: 'POST',
    headers: {
@@ -136,7 +149,7 @@ form.addEventListener('submit', (e) => {
    body: JSON.stringify({
      title: titleValue.value,
      content: contentValue.value,
-     imageUrl: imageUrlValue.value,
+     imageUrl: image,
      userId: userIdValue.value
    })
  })
