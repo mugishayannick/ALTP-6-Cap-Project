@@ -35,7 +35,7 @@ postsList.innerHTML=output;
   
 
 const url =  'http://personal-portofolio1.herokuapp.com/api/post';
-const http =  'http://personal-portofolio1.herokuapp.com/api/comment';
+const https =  'http://personal-portofolio1.herokuapp.com/api/comment';
 
 
 // Get -  read the posts
@@ -53,7 +53,7 @@ postsList.addEventListener('click', (e) => {
 
   let id = e.target.parentElement.dataset.id;
    if(commentButtonIsPressed) {
-     fetch(`${http}/${id}`, {
+     fetch(`${https}/${id}`, {
        method:'GET',
        headers: {
         'content-type': 'application/json',
@@ -78,6 +78,7 @@ postsList.addEventListener('click', (e) => {
   }
 
   if(editButtonIsPressed) {
+   
     const parent = e.target.parentElement;
     let titleContent = parent.querySelector('.card-title').textContent;
     let contentContent = parent.querySelector('.card-text').textContent;
@@ -94,8 +95,9 @@ postsList.addEventListener('click', (e) => {
   // update - update the existing post
   // METHOD: PATCH
   btnSubmit.addEventListener('click', (e) => {
-    const token = localStorage.getItem("token");
     e.preventDefault();
+    const token = localStorage.getItem("token");
+    
     fetch(`${url}/${id}`, {
       method: 'PATCH',
       headers: {

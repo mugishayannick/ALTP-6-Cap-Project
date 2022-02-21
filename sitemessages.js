@@ -1,10 +1,12 @@
+const url = 'http://personal-portofolio1.herokuapp.com/api/message'
 window.addEventListener('load',(e)=>{
     var urlAddress=window.location.href;
     if(urlAddress.includes('sitemessages.html')){
         loadMessages();
     }
 });
-fetch('http://personal-portofolio1.herokuapp.com/api/message').then((data) => {
+
+fetch(url).then((data) => {
     // console.log(data);
     return data.json();
 }).then((completedata) => {
@@ -21,11 +23,12 @@ fetch('http://personal-portofolio1.herokuapp.com/api/message').then((data) => {
     document.getElementById("cards").innerHTML=data1;
     const card =document.querySelector('.card');
     card.addEventListener('click', (e, name,email,message,id) => {
-        window.location.href="editpage.html";
+       
     })
-}).catch((err) => {
-    console.log(err);
 })
+// }).catch((err) => {
+//     console.log(err);
+// })
 
 function loadMessages(){
     if(localStorage.getItem('messages')){

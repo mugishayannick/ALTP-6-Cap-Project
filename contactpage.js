@@ -1,4 +1,7 @@
 const contactForm=document.querySelector('.contact-form');
+const name = document.getElementById('name');
+const email = document.getElementById('email');
+const w3review = document.getElementById('w3review');
 contactForm.addEventListener('submit',(e)=>{
     console.log('saved')
     e.preventDefault();
@@ -49,6 +52,32 @@ contactFormEl.forEach((el,index)=>{
         }      
     });
 });
+
+contactForm.addEventListener('submit', (e) => {
+    const token = localStorage.getItem("token");
+    e.preventDefault
+    fetch('http://personal-portofolio1.herokuapp.com/api/message').then(data), {
+        method: '',
+        headers: {
+          'Content-Type': 'application/json',
+          'authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          w3review: w3review,
+         
+        })
+        // .then(res => res.json())
+      }
+      return data.json();
+     
+    //   .then(data => {
+    //     const dataArr = [];
+    //     dataArr.push(data);
+    //     renderPosts(dataArr);
+      })
+
 const nav = document.getElementById("menu");
     const burger = document.getElementById("burger")
 
