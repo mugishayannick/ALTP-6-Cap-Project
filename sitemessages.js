@@ -6,7 +6,7 @@ window.addEventListener('load',(e)=>{
     }
 });
 
-fetch('http://personal-portofolio1.herokuapp.com/api/message').then((data) => {
+fetch('https://personal-portofolio1.herokuapp.com/api/message').then((data) => {
     // console.log(data);
     return data.json();
 }).then((completedata) => {

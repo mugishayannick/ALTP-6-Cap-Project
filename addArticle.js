@@ -44,7 +44,7 @@ postsList.innerHTML=output;
 
   
 
-const url =  'http://personal-portofolio1.herokuapp.com/api/post';
+const url =  'https://personal-portofolio1.herokuapp.com/api/post';
 
 
 
