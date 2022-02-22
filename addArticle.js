@@ -143,6 +143,7 @@ const formData = new FormData()
 formData.append('title', titleValue.value)
 formData.append('content', contentValue.value)
 formData.append('imageUrl', document.getElementById("imageUrl-value").files[0])
+formData.append('userId', userIdValue.value)
  fetch(url, {
    method: 'POST',
    headers: {
