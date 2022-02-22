@@ -92,7 +92,7 @@ postsList.addEventListener('click', (e) => {
     const parent = e.target.parentElement;
     let titleContent = parent.querySelector('.card-title').textContent;
     let contentContent = parent.querySelector('.card-text').textContent;
-    let imageUrlContent = parent.querySelector('.card-imageUrl').Content;
+    let imageUrlContent = parent.querySelector('.card-imageUrl');
     let userIdContent = parent.querySelector('.card-userId').textContent;
    
 
@@ -139,24 +139,30 @@ form.addEventListener('submit', (e) => {
   const token = localStorage.getItem("token");
   e.preventDefault();
 
-  
- fetch(url, {
+const formData = new FormData()
+formData.append('title', titleValue.value)
+formData.append('content', contentValue.value)
+formData.append('imageUrl', document.getElementById("imageUrl-value").files[0])
+formData.append('userId', userIdValue.value)
+ fetch(url,
+ {
    method: 'POST',
    headers: {
-     'Content-Type': 'application/json',
      'authorization': `Bearer ${token}`
    },
-   body: JSON.stringify({
-     title: titleValue.value,
-     content: contentValue.value,
-     imageUrl: image,
-     userId: userIdValue.value
-   })
+  //  body: JSON.stringify({
+  //    title: titleValue.value,
+  //    content: contentValue.value,
+  //    imageUrl: image,
+  //    userId: userIdValue.value
+  //  })
+  body: formData
  })
- .then(res => res.json())
- .then(data => {
+ 
+ .then((res) => {
+   console.log(res);
    const dataArr = [];
-   dataArr.push(data);
+   dataArr.push(res.json);
    renderPosts(dataArr);
  })
 

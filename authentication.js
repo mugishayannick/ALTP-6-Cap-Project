@@ -1,5 +1,5 @@
 token = localStorage.getItem('token')
 
-if (token) {
-    
+if (!token) {
+    window.location.href = 'loginpage.html'
 }

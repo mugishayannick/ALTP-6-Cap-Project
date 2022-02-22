@@ -105,7 +105,7 @@ const validateUser = () => {
     if(firstName.classList.contains('success') && lastName.classList.contains('success') && email.classList.contains('success') && password.classList.contains('success') && confirmPassword.classList.contains('success') ) {
          document.querySelector("form").submit();
         } else{
-            //  alert("validate all fields");
+             alert("validate all fields");
            return;
          }
     
