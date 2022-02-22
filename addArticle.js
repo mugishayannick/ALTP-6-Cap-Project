@@ -159,7 +159,7 @@ formData.append('userId', userIdValue.value)
   body: formData
  }
  
- .then(res => {
+ .then((res) => {
    const dataArr = [];
    dataArr.push(res.json);
    renderPosts(dataArr);
