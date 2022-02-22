@@ -158,7 +158,7 @@ formData.append('userId', userIdValue.value)
   //  })
   body: formData
  }
- .then(res => res.json())
+//  .then(res => res.json())
  .then(data => {
    const dataArr = [];
    dataArr.push(data);
