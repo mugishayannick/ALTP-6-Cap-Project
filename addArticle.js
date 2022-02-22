@@ -158,10 +158,10 @@ formData.append('userId', userIdValue.value)
   //  })
   body: formData
  }
-//  .then(res => res.json())
- .then(data => {
+ 
+ .then(res => {
    const dataArr = [];
-   dataArr.push(data);
+   dataArr.push(res.json);
    renderPosts(dataArr);
  })
 
