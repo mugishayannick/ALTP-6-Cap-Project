@@ -97,7 +97,7 @@ document.querySelector("#sign-btn").addEventListener("click",
        ){
          document.querySelector("form").submit();
         } else{
-            //  alert("validate all fields");
+             alert("validate all fields");
            return;
          }
 
