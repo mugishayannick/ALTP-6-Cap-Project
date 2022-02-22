@@ -2,9 +2,8 @@ const apiUrl = 'https://personal-portofolio1.herokuapp.com'
 
 document.getElementById("sign-btn").addEventListener("click", (e) => {
     
-    // e.preventDefault();
+    e.preventDefault();
     // validateUser();
-    alert('Worked')
     signUser();
     
 });
@@ -102,13 +101,19 @@ const validateUser = () => {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i;
         return re.test(String(email).toLowerCase());
     }
+
+    if(firstName.classList.contains('success') && lastName.classList.contains('success') && email.classList.contains('success') && password.classList.contains('success') && confirmPassword.classList.contains('success') ) {
+         document.querySelector("form").submit();
+        } else{
+            //  alert("validate all fields");
+           return;
+         }
     
 }
 
 
 }
 const signUser = () => {
-    alert('signUser')
     const userCreds = () => {
         const firstName = document.getElementById('firstName').value;
         const lastName = document.getElementById('lastName').value;
@@ -120,7 +125,7 @@ const signUser = () => {
 
     const signFetch = () => {
         fetch(`${apiUrl}/api/auth/signup`, {
-            method: 'GET',
+            method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify({
                 firstName: userCreds().firstName,
@@ -130,35 +135,18 @@ const signUser = () => {
                 confirmPassword: userCreds().confirmPassword
             })
         }).then(res => {
-            alert('Post Success')
-            console.log(res)
             if (res.ok) return res.json()
             console.log(`Error Happened With Status: ${res.status}`)
 
         }).then(fetchedUser => {
             console.log('Signed In')
-            console.log(fetchedUser)
+            // console.log(fetchedUser.token)
+            localStorage.setItem('token', fetchedUser.token)
         })
     }
-
+    return signFetch()
  }
 
-
-
-
-
-
-    // if(firstName.classList.contains('success') && 
-    // lastName.classList.contains('success') && 
-    //    email.classList.contains('success') &&
-    //    password.classList.contains('success') &&
-    //    confirmPassword.classList.contains('success')
-    //    ){
-    //      document.querySelector("form").submit();
-    //     } else{
-    //         //  alert("validate all fields");
-    //        return;
-    //      }
 
 
 
