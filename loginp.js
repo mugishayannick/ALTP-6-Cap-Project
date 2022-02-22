@@ -7,8 +7,7 @@ const login = async (useremail, password) =>{
     const credentials = {
         email :useremail,
         password : password,
-        loggedIn: false,
-        
+        loggedIn: false
      }
     const response = await fetch("https://personal-portofolio1.herokuapp.com/api/auth/login", {
     method: "POST",
