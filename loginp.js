@@ -4,7 +4,7 @@ const loginFormData = () => {
 
 
 const login = async (useremail, password) =>{
-    const credentials = {
+    const user = {
         email :useremail,
         password : password,
         loggedIn: false,
@@ -12,7 +12,7 @@ const login = async (useremail, password) =>{
      }
     const response = await fetch("https://personal-portofolio1.herokuapp.com/api/auth/login", {
     method: "POST",
-    body: JSON.stringify(credentials),
+    body: JSON.stringify(user),
     headers: { "Content-Type": "application/json" },
   });
 
@@ -21,7 +21,9 @@ const login = async (useremail, password) =>{
     console.log("logged in succesfully");
     const token = await response.json();
     console.log(token);
-    localStorage.token= token;
+    localStorage.setItem("token", user.token);
+    localStorage.setItem("userType", user.type)
+
     window.location.href='./adminpage.html'
     
     
