@@ -160,6 +160,7 @@ formData.append('userId', userIdValue.value)
  })
  
  .then((res) => {
+   console.log(res);
    const dataArr = [];
    dataArr.push(res.json);
    renderPosts(dataArr);
