@@ -144,7 +144,8 @@ formData.append('title', titleValue.value)
 formData.append('content', contentValue.value)
 formData.append('imageUrl', document.getElementById("imageUrl-value").files[0])
 formData.append('userId', userIdValue.value)
- fetch(url, {
+ fetch(url),
+ {
    method: 'POST',
    headers: {
      'authorization': `Bearer ${token}`
@@ -156,7 +157,7 @@ formData.append('userId', userIdValue.value)
   //    userId: userIdValue.value
   //  })
   body: formData
- })
+ }
  .then(res => res.json())
  .then(data => {
    const dataArr = [];
